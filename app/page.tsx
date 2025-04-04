@@ -1,7 +1,8 @@
-import { Navbar } from '@/components/ui/magic/Navbar';
-import { Container } from '@/components/ui/magic/Container';
+import { Navbar } from '@/components/shared/Navbar';
+import { Container } from '@/components/shared/Container';
 import { Hero } from '@/components/sections/Hero';
 import { About } from '@/components/sections/About';
+import { Projects } from '@/components/shared/Projects';
 
 const Home = () => {
   return (
@@ -11,6 +12,7 @@ const Home = () => {
         <Container>
           <Hero />
           <About />
+          <Projects />
         </Container>
       </div>
     </section>

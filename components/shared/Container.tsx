@@ -3,7 +3,7 @@ export const Container = ({ children, className = '' }: {
     className?: string;
 }) => {
     return (
-        <div className={`p-6 border border-gray-200 rounded-none ${className}`}>
+        <div className={`p-2 sm:p-4 md:p-6 border border-gray-200 rounded-none relative ${className}`}>
             {children}
         </div>
     );

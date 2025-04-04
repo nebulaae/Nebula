@@ -9,7 +9,7 @@ interface DecodeTextProps {
 export const DecodeText: React.FC<DecodeTextProps> = ({
   text,
   className = '',
-  refreshInterval = 10000,
+  refreshInterval = 30000,
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
@@ -135,21 +135,16 @@ export const DecodeText: React.FC<DecodeTextProps> = ({
   return (
     <div 
       ref={containerRef} 
-      className={`decode-text ${className}`}
+      className={`w-full text-center text-xl sm:text-2xl md:text-3xl text-balance ${className}`}
     >
       {characters.map((char, index) => (
         char === ' ' ? (
-          <div key={index} className="space"></div>
+          <div key={index} className="space text-pretty"></div>
         ) : (
-          <div key={index} className="text-animation">{char}</div>
+          <div key={index} className="text-animation text-pretty">{char}</div>
         )
       ))}
       <style jsx>{`
-        .decode-text {
-          width: 100%;
-          font-size: 30px;
-          text-align: center;
-        }
         .space {
           display: inline-block;
           width: 10px;

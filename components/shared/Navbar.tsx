@@ -5,6 +5,7 @@ import Image from 'next/image';
 
 import React, { useState, useEffect } from 'react';
 import { LocaleSwitcher } from '@/components/functions/LocaleSwitcher';
+import { Menu } from './Menu';
 
 export const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -56,35 +57,29 @@ export const Navbar: React.FC = () => {
 
           {/* Center: Navigation Links */}
           <div className="hidden md:flex sm:space-x-6">
-            <Link href="/about" className={` ${isScrolled ? 'text-gray-700' : 'text-gray-800'} hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium`}>
+            <Link href="#home" className={` ${isScrolled ? 'text-gray-700' : 'text-gray-800'} hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium`}>
+              Home
+            </Link>
+            <Link href="#about" className={` ${isScrolled ? 'text-gray-700' : 'text-gray-800'} hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium`}>
               About
             </Link>
-            <Link href="/services" className={` ${isScrolled ? 'text-gray-700' : 'text-gray-800'} hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium`}>
-              Services
+            <Link href="#timeline" className={` ${isScrolled ? 'text-gray-700' : 'text-gray-800'} hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium`}>
+              Timeline
             </Link>
-            <Link href="/contact" className={` ${isScrolled ? 'text-gray-700' : 'text-gray-800'} hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium`}>
-              Contact
+            <Link href="#contacts" className={` ${isScrolled ? 'text-gray-700' : 'text-gray-800'} hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium`}>
+              Contacts
             </Link>
-            {/* Add more links as needed */}
           </div>
 
           {/* Right Side: Functional blocks */}
-          <div className="hidden md:flex sm:space-x-6">
+          <div className="flex items-center justify-center gap-2">
             <LocaleSwitcher />
-          </div>
-
-          {/* Mobile Menu Button (Optional) */}
-          <div className="flex md:hidden">
-            {/* Add a button here to toggle a mobile menu */}
-            <button className={` ${isScrolled ? 'text-gray-700' : 'text-gray-800'} p-2`}>
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-              </svg>
-            </button>
+            <div className="flex md:hidden">
+              <Menu />
+            </div>
           </div>
         </div>
       </div>
-      {/* Add Mobile Menu container here if needed */}
     </nav>
   );
 };

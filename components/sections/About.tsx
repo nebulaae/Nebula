@@ -1,5 +1,6 @@
 "use client"
 
+import { Button } from "../ui/button";
 import { DecodeText } from "../ui/magic/DecodeText"
 import { Typewriter } from "../ui/magic/Typewriter"
 
@@ -8,10 +9,10 @@ export const About = () => {
         <section className="section items-center py-16 px-4 border border-gray-200" id="about">
             <DecodeText
                 text="Who am I?"
-                className="text-2xl md:text-6xl tracking-wide font-bold"
-                refreshInterval={16000}
+                className="tracking-wide font-bold"
+                refreshInterval={30000}
             />
-            <div className="flex flex-col w-full my-8">
+            <div className="flex flex-col w-full mt-8">
                 <Typewriter
                     className="text-base font-medium text-start"
                     speed={30}
@@ -25,16 +26,32 @@ export const About = () => {
             </div>
 
             {/* TABLE */}
-            <div className="flex flex-col w-full mt-8" style={{marginTop: "32px"}}>
+            <div className="flex flex-col w-full my-8" style={{ marginTop: "32px" }}>
                 {/* TABLE ROW */}
-                <div className="flex flex-row justify-start items-center border border-gray-200">
+                <div className="flex flex-col justify-start items-center border border-gray-200 p-2">
+                    <h1 className="text-center text-lg font-bold">Skills</h1>
                     <Typewriter
-                        className="text-base font-bold text-start"
+                        className="text-base text-start"
                         speed={80}
                     >
-                        Skills - Clean Code, Reliable Architechture, Pattern Programming
+                        Clean Code, Reliable Architechture, Pattern Programming
                     </Typewriter>
                 </div>
+                {/* TABLE ROW */}
+                <div className="flex flex-col justify-start items-center border border-gray-200 p-2">
+                    <h1 className="text-center text-lg font-bold">Stack</h1>
+                    <Typewriter
+                        className="text-base text-start"
+                        speed={80}
+                    >
+                        Next.js, React.js, MongoDB, PostgreSQL
+                    </Typewriter>
+                </div>
+            </div>
+
+            {/* DOWNLOAD CV */}
+            <div>
+                <Button className="button-solid">Download CV</Button>
             </div>
         </section>
     );

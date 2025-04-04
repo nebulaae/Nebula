@@ -7,7 +7,7 @@ const Home = () => {
   return (
     <section className="flex flex-col items-center w-full h-full">
       <Navbar />
-      <div className="w-full max-w-6xl mx-auto mt-28 mb-16 px-8">
+      <div className="w-full max-w-6xl mx-auto mt-28 mb-16 px-4">
         <Container>
           <Hero />
           <About />

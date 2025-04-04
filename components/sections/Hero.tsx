@@ -15,7 +15,7 @@ export const Hero = () => {
                 />
             </div>
             <div>
-                <ChevronDownIcon className="size-8 cursor-pointer animate-bounce" href="#about" />
+                <a href="#about"><ChevronDownIcon className="size-8 cursor-pointer animate-bounce" /></a>
             </div>
         </section>
     );

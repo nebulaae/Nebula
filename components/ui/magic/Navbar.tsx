@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 import React, { useState, useEffect } from 'react';
+import { LocaleSwitcher } from '@/components/functions/LocaleSwitcher';
 
 export const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -40,36 +41,40 @@ export const Navbar: React.FC = () => {
 
   return (
     <nav
-      className={`${baseClasses} ${
-        isScrolled ? scrolledStateClasses : defaultStateClasses
-      }`}
+      className={`${baseClasses} ${isScrolled ? scrolledStateClasses : defaultStateClasses
+        }`}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16"> {/* Adjust height as needed */}
           {/* Left Side: Logo/Brand */}
           <div>
             <Link href="/" className="flex flex-row gap-2 items-center text-xl font-bold text-gray-800 hover:text-gray-600">
-                <Image src="logo-white-transparent.svg" alt="logo" width={48} height={48} />
-                Nebula
+              <Image src="logo-white-transparent.svg" alt="logo" width={48} height={48} />
+              Nebula
             </Link>
           </div>
 
-          {/* Right Side: Navigation Links */}
-          <div className="hidden sm:flex sm:space-x-6">
-             <Link href="/about" className={` ${isScrolled ? 'text-gray-700' : 'text-gray-800'} hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium`}>
-                About
-             </Link>
-             <Link href="/services" className={` ${isScrolled ? 'text-gray-700' : 'text-gray-800'} hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium`}>
-                 Services
-             </Link>
-             <Link href="/contact" className={` ${isScrolled ? 'text-gray-700' : 'text-gray-800'} hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium`}>
-                 Contact
-             </Link>
-             {/* Add more links as needed */}
+          {/* Center: Navigation Links */}
+          <div className="hidden md:flex sm:space-x-6">
+            <Link href="/about" className={` ${isScrolled ? 'text-gray-700' : 'text-gray-800'} hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium`}>
+              About
+            </Link>
+            <Link href="/services" className={` ${isScrolled ? 'text-gray-700' : 'text-gray-800'} hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium`}>
+              Services
+            </Link>
+            <Link href="/contact" className={` ${isScrolled ? 'text-gray-700' : 'text-gray-800'} hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium`}>
+              Contact
+            </Link>
+            {/* Add more links as needed */}
+          </div>
+
+          {/* Right Side: Functional blocks */}
+          <div className="hidden md:flex sm:space-x-6">
+            <LocaleSwitcher />
           </div>
 
           {/* Mobile Menu Button (Optional) */}
-          <div className="sm:hidden">
+          <div className="flex md:hidden">
             {/* Add a button here to toggle a mobile menu */}
             <button className={` ${isScrolled ? 'text-gray-700' : 'text-gray-800'} p-2`}>
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">

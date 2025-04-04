@@ -1,0 +1,25 @@
+{
+    "Header": {
+        "Navbar": {
+            "About": "About Me",
+            "Projects": "Projects",
+            "Timeline": "Timeline",
+            "Contacts": "Contacts"
+        }
+    },
+    "Body": {
+        "Hero": {
+            "Title": "Welcome to the Nebula Porfolio"
+        },
+        "About": {
+            "Title": "About me",
+            "Description": "My name is Lazizbek. I am the Middle Frontend Developer based on Uzbekistan. I have been coding since 2020 and I specialize in many fields. I am a student of the Central Asian University and studying in the Computer Science. My tech stack is: Next.js, React.js. I am coding in the Typescript language. Moreover I am learning the Machine Learning, and i know different stuff from it",
+            "Additional": {
+                "Skills": {
+                    "Title": "Skills",
+                    "Description": "Clean Code, Reliable Architechture, Pattern Programming"
+                }
+            }
+        }
+    }
+}

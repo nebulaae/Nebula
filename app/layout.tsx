@@ -5,6 +5,8 @@ import { NextIntlClientProvider } from "next-intl";
 import { getLocale, getMessages } from "next-intl/server";
 import { ThemeProviders } from "./providers/ThemeProviders";
 
+import { Header } from "@/components/shared/Header";
+
 import "./globals.css";
 
 const geistSans = Geist({
@@ -32,6 +34,7 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <NextIntlClientProvider messages={messages}>
           <ThemeProviders>
+            <Header />
             {children}
           </ThemeProviders>
         </NextIntlClientProvider>

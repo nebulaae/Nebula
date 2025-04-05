@@ -1,6 +1,7 @@
 {
     "Header": {
         "Navbar": {
+            "Home": "Home",
             "About": "About Me",
             "Projects": "Projects",
             "Timeline": "Timeline",

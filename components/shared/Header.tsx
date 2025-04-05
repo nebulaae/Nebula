@@ -1,15 +1,15 @@
-"use client";
+"use client"
 
 import Link from 'next/link';
 import Image from 'next/image';
 
+import { Menu } from './Menu';
+import { navLinks } from '@/constants';
 import React, { useState, useEffect } from 'react';
 import { LocaleSwitcher } from '@/components/functions/LocaleSwitcher';
-import { Menu } from './Menu';
 
-export const Navbar: React.FC = () => {
+export const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
-  // You can adjust this threshold value
   const scrollThreshold = 10; // Pixels scrolled down to trigger the change
 
   useEffect(() => {
@@ -41,7 +41,7 @@ export const Navbar: React.FC = () => {
   const scrolledStateClasses = 'bg-white/50 backdrop-blur-xl border-b border-gray-200';
 
   return (
-    <nav
+    <header
       className={`${baseClasses} ${isScrolled ? scrolledStateClasses : defaultStateClasses
         }`}
     >
@@ -56,20 +56,17 @@ export const Navbar: React.FC = () => {
           </div>
 
           {/* Center: Navigation Links */}
-          <div className="hidden md:flex sm:space-x-6">
-            <Link href="#home" className={` ${isScrolled ? 'text-gray-700' : 'text-gray-800'} hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium`}>
-              Home
-            </Link>
-            <Link href="#about" className={` ${isScrolled ? 'text-gray-700' : 'text-gray-800'} hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium`}>
-              About
-            </Link>
-            <Link href="#timeline" className={` ${isScrolled ? 'text-gray-700' : 'text-gray-800'} hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium`}>
-              Timeline
-            </Link>
-            <Link href="#contacts" className={` ${isScrolled ? 'text-gray-700' : 'text-gray-800'} hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium`}>
-              Contacts
-            </Link>
-          </div>
+          <nav className="hidden md:flex sm:space-x-6">
+            {navLinks().map((link) => (
+              <Link
+                href={link.href}
+                key={link.id}
+                className={`${isScrolled ? 'text-gray-700' : 'text-gray-800'} px-3 py-2 text-sm hover:font-semibold hover:-translate-y-1 transition ease-in-out duration-200`}
+              >
+                {link.title}
+              </Link>
+            ))}
+          </nav>
 
           {/* Right Side: Functional blocks */}
           <div className="flex items-center justify-center gap-2">
@@ -80,6 +77,6 @@ export const Navbar: React.FC = () => {
           </div>
         </div>
       </div>
-    </nav>
+    </header>
   );
 };

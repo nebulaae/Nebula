@@ -22,7 +22,7 @@ export const Hero = () => {
             <Particles
                 className="absolute inset-0 z-0"
                 quantity={50}
-                ease={40}
+                ease={10}
                 color="#000000"
                 refresh
             />

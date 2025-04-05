@@ -1,12 +1,13 @@
 "use client"
 
+import { DownloadIcon } from "@radix-ui/react-icons";
 import { Button } from "../ui/button";
 import { DecodeText } from "../ui/magic/DecodeText"
 import { Typewriter } from "../ui/magic/Typewriter"
 
 export const About = () => {
     return (
-        <section className="section items-center py-16 px-4 border border-gray-200" id="about">
+        <section className="section items-center py-16 px-4 border-l border-b border-r border-gray-200" id="about">
             <DecodeText
                 text="Who am I?"
                 className="tracking-wide font-bold"
@@ -29,7 +30,12 @@ export const About = () => {
             <div className="flex flex-col w-full my-8" style={{ marginTop: "32px" }}>
                 {/* TABLE ROW */}
                 <div className="flex flex-col justify-start items-center border border-gray-200 p-2">
-                    <h1 className="text-center text-lg font-bold">Skills</h1>
+                    <Typewriter
+                        className="text-center text-lg font-bold"
+                        speed={80}
+                    >
+                        Skills
+                    </Typewriter>
                     <Typewriter
                         className="text-base text-start"
                         speed={80}
@@ -38,8 +44,13 @@ export const About = () => {
                     </Typewriter>
                 </div>
                 {/* TABLE ROW */}
-                <div className="flex flex-col justify-start items-center border border-gray-200 p-2">
-                    <h1 className="text-center text-lg font-bold">Stack</h1>
+                <div className="flex flex-col justify-start items-center border-l border-b border-r border-gray-200 p-2">
+                    <Typewriter
+                        className="text-center text-lg font-bold"
+                        speed={80}
+                    >
+                        Stack
+                    </Typewriter>
                     <Typewriter
                         className="text-base text-start"
                         speed={80}
@@ -51,7 +62,10 @@ export const About = () => {
 
             {/* DOWNLOAD CV */}
             <div>
-                <Button className="button-solid">Download CV</Button>
+                <Button className="button-solid">
+                    <DownloadIcon />
+                    Download CV
+                </Button>
             </div>
         </section>
     );

@@ -6,6 +6,7 @@ import { getLocale, getMessages } from "next-intl/server";
 import { ThemeProviders } from "./providers/ThemeProviders";
 
 import { Header } from "@/components/shared/Header";
+import { Footer } from "@/components/shared/Footer";
 
 import "./globals.css";
 
@@ -22,7 +23,6 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Nebula Portfolio",
   description: "Learning the galaxy is great, especially when you explore the wormholes...I am the curios, middle frontend developer, you can hire me btw!",
-  icons: "favicon.svg",
 };
 
 export default async function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
@@ -36,6 +36,7 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
           <ThemeProviders>
             <Header />
             {children}
+            <Footer />
           </ThemeProviders>
         </NextIntlClientProvider>
       </body>

@@ -16,7 +16,7 @@ export const ScrollProgress = React.forwardRef<
     <motion.div
       ref={ref}
       className={cn(
-        "fixed inset-x-0 top-0 z-50 h-px origin-left bg-gradient-to-r from-neutral-200 to-neutral-400",
+        "fixed inset-x-0 top-0 z-50 h-px origin-left bg-neutral-400",
         className,
       )}
       style={{

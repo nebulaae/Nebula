@@ -32,7 +32,7 @@ export const Projects = () => {
                         {projectItems.map((item, index) => (
                             <CarouselItem className="md:basis-1/2 lg:basis-1/3" key={item.id}>
                                 <div className={`flex flex-col w-full h-full ${(index === 0) ? 'border' : 'border-t border-b border-r'} border-gray-200 p-2`}>
-
+                                    {/* GRID WITH TITLE */}
                                     <div className="relative flex justify-center items-center w-full h-36">
                                         <FlickeringGrid
                                             className="absolute inset-0 -z-10 size-full"
@@ -45,11 +45,13 @@ export const Projects = () => {
                                         <h1 className="text-3xl font-bold font-sans">{item.title}</h1>
                                     </div>
 
+                                    {/* MAIN CONTENT */}
                                     <div className="flex flex-col gap-1 items-start justify-center border-t border-gray-200 pb-2">
                                         <h1 className="text-md font-semibold">{item.title}</h1>
                                         <p className="text-sm">{item.description}</p>
                                     </div>
 
+                                    {/* BUTTON LINKS */}
                                     <div className="flex flex-row items-center justify-center gap-2 border-t border-gray-200">
                                         <a href={item.liveUrl} target="_blank" rel="noreferrer">
                                             <Button className="button-flat">
@@ -65,6 +67,7 @@ export const Projects = () => {
                                         </a>
                                     </div>
 
+                                    {/* ADDITIONAL INFO */}
                                     <div className="flex justify-between items-center border-t border-gray-200 pt-2">
                                         <div className="flex justify-start items-center gap-2">
                                             <CommitIcon />
